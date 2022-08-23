@@ -33,6 +33,7 @@ append to server.conf
 [
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 # this needs to be changed depending on what ports are in use some ports will be reserved 
+# change these ports depending on what ports are in use probably just increment by 1
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 
