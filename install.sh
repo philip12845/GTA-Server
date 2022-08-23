@@ -24,8 +24,6 @@ git clone https://github.com/citizenfx/cfx-server-data.git ~/FXServer/server-dat
 echo "got server data from deprecated github repo"
 cd ~/FXServer/server-data && bash ~/FXServer/server/run.sh +exec server.cfg
 echo "server install worked"
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
       # i dont think this is right
