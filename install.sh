@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /home
 ------------------------------------------------------------dependencies----------------------------------------------------------------------------------------
+cd /home
 sudo apt install git 
 sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
