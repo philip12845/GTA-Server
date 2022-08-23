@@ -8,6 +8,7 @@ sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 #input from website
+$sv_lincensekey = sv_licensekey.input
 $username-$servername
 mkdir $username-$servername
 cd $username-$servername
