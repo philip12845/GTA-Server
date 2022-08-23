@@ -25,10 +25,10 @@ echo ""
 cd ~/FXServer/server-data && bash ~/FXServer/server/run.sh +exec server.cfg
 echo "server install worked"
 
-# i dont think this is right
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# i dont think this is right
 append to server.conf
 [
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
