@@ -7,7 +7,6 @@ echo "installed dependencies (git and xz-utils)"
 sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #input from website
 $username-$servername
 mkdir $username-$servername
@@ -26,7 +25,7 @@ cd ~/FXServer/server-data && bash ~/FXServer/server/run.sh +exec server.cfg
 echo "server install worked"
 
 # i dont think this is right
-append
+append to server.conf
 [
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 # this needs to be changed depending on what ports are in use some ports will be reserved 
