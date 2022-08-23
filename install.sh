@@ -1,12 +1,13 @@
 #!/bin/bash
 cd /home
-------------------------------------------------------------dependencies---------------------------------------------------------------
+------------------------------------------------------------dependencies----------------------------------------------------------------------------------------
 sudo apt install git 
 sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
 sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #input from website
 $username-$servername
 mkdir $username-$servername
@@ -14,15 +15,19 @@ cd $username-$servername
 echo "start of server install"
 # add more echos here
 mkdir -p ~/FXServer/server
+echo "made directory ~/FXServer/server"
 wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/5820-8e883dcc7941ce1fa5de359ede53afe587070723/fx.tar.xz
+echo "wgot the server stuff"
 cd ~/FXServer/server && tar xf fx.tar.xz
+echo "extraction complete"
 git clone https://github.com/citizenfx/cfx-server-data.git ~/FXServer/server-data
+echo ""
 cd ~/FXServer/server-data && bash ~/FXServer/server/run.sh +exec server.cfg
 echo "server install worked"
 
 # i dont think this is right
 append
-"
+[
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 # this needs to be changed depending on what ports are in use some ports will be reserved 
 endpoint_add_tcp "0.0.0.0:30120"
@@ -102,4 +107,5 @@ set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
 # license key needs to be changed depending on what the user enters 
-sv_licenseKey changeme"
+sv_licenseKey changeme
+]
