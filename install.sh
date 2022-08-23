@@ -21,7 +21,7 @@ echo "wgot the server stuff"
 cd ~/FXServer/server && tar xf fx.tar.xz
 echo "extraction complete"
 git clone https://github.com/citizenfx/cfx-server-data.git ~/FXServer/server-data
-echo ""
+echo "got server data from deprecated github repo"
 cd ~/FXServer/server-data && bash ~/FXServer/server/run.sh +exec server.cfg
 echo "server install worked"
 
