@@ -1,11 +1,14 @@
 #!/bin/bash
 ------------------------------------------------------------dependencies----------------------------------------------------------------------------------------
 cd /home
+
+sudo apt update && sudo apt upgrade
+echo "updated and upgraded all packages"
+
 sudo apt install git 
 sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
-sudo apt update && sudo apt upgrade
-echo "updated and upgraded all packages"
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 #input from website
 $sv_lincensekey = sv_licensekey.input
