@@ -5,22 +5,34 @@ cd /home
 sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
 
-sudo apt install git 
-sudo apt install xz-utils
+sudo apt install git && sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 #input from website
 $sv_lincensekey = sv_licensekey.input
+
+echo "what is your username?"
+echo "what is your servername?"
+
+
 $username-$servername
+
+
+
+
+
+
+
+
 mkdir $username-$servername
 cd $username-$servername
 echo "start of server install"
 # add more echos here
 mkdir -p ~/FXServer/server
 echo "made directory ~/FXServer/server"
-wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/5820-8e883dcc7941ce1fa5de359ede53afe587070723/fx.tar.xz
-echo "wgot the server stuff"
+wget /artifacts/fivem/build_proot_linux/master/5820-8e883dcc7941ce1fa5de359ede53afe587070723/fx.tar.xz
+echo "hit: https://runtime.fivem.net"
 cd ~/FXServer/server && tar xf fx.tar.xz
 echo "extraction complete"
 git clone https://github.com/citizenfx/cfx-server-data.git ~/FXServer/server-data
