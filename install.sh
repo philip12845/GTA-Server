@@ -6,21 +6,11 @@ echo "updated and upgraded all packages"
 
 sudo apt install git && sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
-
-
-
-
 #input from website
 #$sv_lincensekey = sv_licensekey.input
 #echo "what is your username?"
 #echo "what is your servername?"
 #$username-$servername
-
-
-
-
-
-
 #mkdir $username-$servername
 #cd $username-$servername
 echo "start of server install"
