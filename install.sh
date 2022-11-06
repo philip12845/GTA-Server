@@ -1,26 +1,73 @@
 #!/bin/bash
-cd /home
+------------------------------------------------------------dependencies----------------------------------------------------------------------------------------
 
 sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
 
 sudo apt install git && sudo apt install xz-utils
 echo "installed dependencies (git and xz-utils)"
-#input from website
-#$sv_lincensekey = sv_licensekey.input
-#echo "what is your username?"
-#echo "what is your servername?"
-#$username-$servername
-#mkdir $username-$servername
-#cd $username-$servername
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------ use this for inspiration 
+
+#!/usr/bin/env bash
+
+echo "Hello, please introduce yourself."
+
+echo -n "Your name: "
+read -r name
+
+echo "Are you human?"
+
+echo -n "y/n: "
+read -r human
+
+echo "What is your favorite programming language?"
+
+echo -n "Your answer: "
+read -r lang
+
+echo
+echo "Answers:"
+echo "1. $name"
+echo "2. $human"
+echo "3. $lang"
+
+look at expect program for linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo "what is your servername"
+inout=$servername
+-- allow user to answer and store as variable $servername
+
+echo "what is your username"
+input=$username
+-- allow user to answer and store as variable $username
+
+cd /home
+mkdir $username-$servername
+
+
+cd $username-$servername
 echo "start of server install"
+# add more echos here
 mkdir -p ~/FXServer/server
 echo "made directory ~/FXServer/server"
-cd ~/FXServer/server
-echo "successfully cd into this dir"
 wget /artifacts/fivem/build_proot_linux/master/5820-8e883dcc7941ce1fa5de359ede53afe587070723/fx.tar.xz
 echo "hit: https://runtime.fivem.net"
-tar xf fx.tar.xz
+cd ~/FXServer/server && tar xf fx.tar.xz
 echo "extraction complete"
 git clone https://github.com/citizenfx/cfx-server-data.git ~/FXServer/server-data
 echo "got server data from deprecated github repo"
@@ -29,26 +76,26 @@ echo "server install worked"
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
       # i dont think this is right
-    # append to server.conf
-     # [
+      append to server.conf
+      [
       # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
       # this needs to be changed depending on what ports are in use some ports will be reserved 
       # change these ports depending on what ports are in use probably just increment by 1
-      #endpoint_add_tcp "0.0.0.0:30120"
-      #endpoint_add_udp "0.0.0.0:30120"
+      endpoint_add_tcp "0.0.0.0:30120"
+      endpoint_add_udp "0.0.0.0:30120"
 
       # These resources will start by default.
-     # ensure mapmanager
-     # ensure chat
-     # ensure spawnmanager
-     # ensure sessionmanager
-     # ensure basic-gamemode
-     # ensure hardcap
-     # ensure rconlog
+      ensure mapmanager
+      ensure chat
+      ensure spawnmanager
+      ensure sessionmanager
+      ensure basic-gamemode
+      ensure hardcap
+      ensure rconlog
 
       # This allows players to use scripthook-based plugins such as the legacy Lambda Menu.
       # Set this to 1 to allow scripthook. Do note that this does _not_ guarantee players won't be able to use external plugins.
-     # sv_scriptHookAllowed 0
+      sv_scriptHookAllowed 0
 
       # Uncomment this and set a password to enable RCON. Make sure to change the password - it should look like rcon_password "YOURPASSWORD"
       #rcon_password ""
@@ -58,11 +105,11 @@ echo "server install worked"
       # - sets tags "drifting, cars, racing"
       # Or:
       # - sets tags "roleplay, military, tanks"
-      #sets tags "default"
+      sets tags "default"
 
       # A valid locale identifier for your server's primary language.
       # For example "en-US", "fr-CA", "nl-NL", "de-DE", "en-GB", "pt-BR"
-      #sets locale "root-AQ" 
+      sets locale "root-AQ" 
       # please DO replace root-AQ on the line ABOVE with a real language! :)
 
       # Set an optional server info and connecting banner image url.
@@ -71,13 +118,13 @@ echo "server install worked"
       #sets banner_connecting "https://url.to/image.png"
 
       # Set your server's hostname. This is not usually shown anywhere in listings.
-      #sv_hostname "FXServer, but unconfigured"
+      sv_hostname "FXServer, but unconfigured"
 
       # Set your server's Project Name
-      #sets sv_projectName "My FXServer Project"
+      sets sv_projectName "My FXServer Project"
 
       # Set your server's Project Description
-      #sets sv_projectDesc "Default FXServer requiring configuration"
+      sets sv_projectDesc "Default FXServer requiring configuration"
 
       # Nested configs!
       #exec server_internal.cfg
@@ -86,7 +133,7 @@ echo "server install worked"
       #load_server_icon myLogo.png
 
       # convars which can be used in scripts
-      #set temp_convar "hey world!"
+      set temp_convar "hey world!"
 
       # Remove the `#` from the below line if you want your server to be listed as 'private' in the server browser.
       # Do not edit it if you *do not* want your server listed as 'private'.
@@ -95,21 +142,22 @@ echo "server install worked"
       #sv_master1 ""
 
       # Add system admins
-      #add_ace group.admin command allow # allow all commands
-      #add_ace group.admin command.quit deny # but don't allow quit
-      #add_principal identifier.fivem:1 group.admin # add the admin to the group
+      add_ace group.admin command allow # allow all commands
+      add_ace group.admin command.quit deny # but don't allow quit
+      add_principal identifier.fivem:1 group.admin # add the admin to the group
 
       # enable OneSync (required for server-side state awareness)
-      #set onesync on
+      set onesync on
 
       # Server player slot limit (see https://fivem.net/server-hosting for limits)
-      #sv_maxclients 48
+      sv_maxclients 48
 
       # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
       # -> replace "" with the key
-      #set steam_webApiKey ""
+      set steam_webApiKey ""
 
       # License key for your server (https://keymaster.fivem.net)
       # license key needs to be changed depending on what the user enters 
-      #sv_licenseKey changeme
-      #]
+      sv_licenseKey changeme
+      ]
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
