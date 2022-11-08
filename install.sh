@@ -1,5 +1,4 @@
 #!/bin/bash
-------------------------------------------------------------dependencies----------------------------------------------------------------------------------------
 
 sudo apt update && sudo apt upgrade
 echo "updated and upgraded all packages"
