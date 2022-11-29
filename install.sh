@@ -44,7 +44,7 @@ rm fx.tar.xz
 echo "starting server..."
 ./run.sh
 
-
+# might need to have a look at xdotool
 
 
 
